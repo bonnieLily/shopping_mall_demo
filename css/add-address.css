@@ -1,0 +1,9 @@
+.mui-content {
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+}
+
+.mui-input-group input {
+	font-size: 14px;
+}

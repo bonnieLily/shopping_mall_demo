@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,user-scalable=0,initial-scale=1">
+	<title>letao</title>
+	<!-- 引入mui框架css -->
+	<link rel="stylesheet" href="assets/mui/css/mui.min.css">
+	<!-- 引入fontawesome图标库 -->
+	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/address.css">
+	<link rel="stylesheet" href="css/cart.css">
+	<link rel="shortcut icon" href="images/favicon.ico">
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav my-header">
+		<a href="#" class="mui-icon mui-icon-back mui-pull-left"></a>
+		<h1 class="mui-title">我的购物车</h1>
+	</header>
+	<nav class="mui-bar mui-bar-tab footer my-footer">
+		<a class="mui-tab-item" href="index.html">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item" href="category.html">
+			<span class="mui-icon mui-icon-bars"></span>
+			<span class="mui-tab-label">分类</span>
+		</a>
+		<a class="mui-tab-item mui-active" href="cart.html">
+			<!-- fontawesome引用 fa fa-shopping-cart-->
+			<span class="mui-icon fa fa-shopping-cart"></span>
+			<span class="mui-tab-label">购物车</span>
+		</a>
+		<a class="mui-tab-item" href="user.html">
+			<span class="mui-icon mui-icon-person"></span>
+			<span class="mui-tab-label">会员中心</span>
+		</a>
+	</nav>
+	<div class="mui-content">
+		<ul class="mui-table-view" id="cart-box">
+			
+		</ul>
+	</div>
+	<script src="assets/mui/js/mui.min.js"></script>
+	<script src="assets/zepto/zepto.min.js"></script>
+	<script src="assets/art-template/template-web.js"></script>
+	<script src="js/public.js"></script>
+	<script src="js/cart.js"></script>
+
+	<script type="text/html" id="cartTpl">
+		<% for(var i=0;i<result.length;i++){ %>
+		<li class="mui-table-view-cell mui-media">
+			<div class="mui-slider-right mui-disabled">
+				<span class="mui-btn mui-btn-blue edit-btn" edit-id="<%=result[i].id%>">编辑</span>
+				<a href="javascript:;" class="mui-btn mui-btn-red delete-btn" data-id="<%=result[i].id%>">删除</a>
+			</div>
+			<img class="mui-media-object mui-pull-left" src="<%=result[i].pic[0].picAddr %>">
+			<div class="mui-media-body mui-slider-handle">
+				<%=result[i].proName%>
+				<p class='mui-ellipsis'>价格:<%=result[i].price%> 尺码:<%=result[i].size%> 数量:<%=result[i].num%></p>
+			</div>
+		</li>
+		<% } %>
+	</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+.mui-content{
+	position: absolute;
+	min-height: 100%;
+	width: 100%;
+}
+
+#add-address {
+	display: block;
+	width: 100%;
+	padding: 10px 0;
+	text-align: center;
+	font-size: 14px;
+}
+
+.mui-media-body,
+.mui-ellipsis {
+	font-size: 14px;
+}

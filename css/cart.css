@@ -1,0 +1,9 @@
+.mui-content {
+	position: absolute;
+	min-height: 100%;
+	width: 100%;
+}
+
+.mui-content > .mui-table-view:first-child {
+	margin-top: 0;
+}

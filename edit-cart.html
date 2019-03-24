@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,user-scalable=0,initial-scale=1">
+	<title>letao</title>
+	<!-- 引入mui框架css -->
+	<link rel="stylesheet" href="assets/mui/css/mui.min.css">
+	<!-- 引入fontawesome图标库 -->
+	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="stylesheet" href="assets/picker/css/mui.poppicker.css">
+	<link rel="stylesheet" href="assets/picker/css/mui.picker.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/detail.css">
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav my-header">
+		<a href="#" class="mui-icon mui-icon-back mui-pull-left"></a>
+		<h1 class="mui-title">商品详情</h1>
+	</header>
+	<nav class="mui-bar mui-bar-tab footer my-footer">
+		<a class="mui-tab-item" href="index.html">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item" href="category.html">
+			<span class="mui-icon mui-icon-bars"></span>
+			<span class="mui-tab-label">分类</span>
+		</a>
+		<a class="mui-tab-item" href="cart.html">
+			<!-- fontawesome引用 fa fa-shopping-cart-->
+			<span class="mui-icon fa fa-shopping-cart"></span>
+			<span class="mui-tab-label">购物车</span>
+		</a>
+		<a class="mui-tab-item" href="user.html">
+			<span class="mui-icon mui-icon-person"></span>
+			<span class="mui-tab-label">会员中心</span>
+		</a>
+	</nav>
+	<div class="mui-content">
+		<div id="product-box">
+			
+		</div>
+		<div class="num mui-clearfix">
+			<div class="mui-pull-left">数量:</div>
+			<div class="mui-pull-left select-num">
+				<span id="reduce">-</span>
+				<input type="text" value="1" id="inp">
+				<span id="increase">+</span>
+			</div>
+			<div class="mui-pull-left" id="kucun">剩余: <span></span>件</div>
+		</div>
+		<div class="btns mui-clearfix">
+			<a href="cart.html">查看购物车</a>
+			<span id="addCart">加入购物车</span>
+		</div>
+	</div>
+	<script src="assets/mui/js/mui.min.js"></script>
+	<script src="assets/zepto/zepto.min.js"></script>
+	<script src="assets/art-template/template-web.js"></script>
+	<script src="js/public.js"></script>
+	<script src="js/edit-cart.js"></script>
+
+	<script type="text/html" id="cartEdit">
+		<div class="mui-slider">
+			<div class="mui-slider-group">
+				<% for(var i=0;i<pic.length;i++){ %>
+				<div class="mui-slider-item">
+					<img src="<%=pic[i].picAddr%>" />
+				</div>
+				<% } %>
+			</div>
+		</div>
+		<div class="product-title">
+			<%=proName %>
+		</div>
+		<div class="price">
+			价格:
+			<span class="now">￥<%=price%></span>
+			<span class="old">￥<%=oldPrice%></span>
+		</div>
+		<div class="size">
+			尺码:
+			<% var size = productSize.split('-') %>
+			<% for(var i=size[0];i<=size[1];i++){ %>
+			<span size-cart="<%=i %>"><%=i %></span>
+			<% } %>
+		</div>
+	</script>
+</body>
+</html>

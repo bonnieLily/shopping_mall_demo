@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,user-scalable=0,initial-scale=1">
+	<title>letao</title>
+	<!-- 引入mui框架css -->
+	<link rel="stylesheet" href="assets/mui/css/mui.min.css">
+	<!-- 引入fontawesome图标库 -->
+	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/search.css">
+	<link rel="shortcut icon" href="images/favicon.ico">
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav my-header">
+		<a href="#" class="mui-icon mui-icon-back mui-pull-left"></a>
+		<h1 class="mui-title">搜索中心</h1>
+	</header>
+	<nav class="mui-bar mui-bar-tab footer my-footer">
+		<a class="mui-tab-item" href="index.html">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item" href="category.html">
+			<span class="mui-icon mui-icon-bars"></span>
+			<span class="mui-tab-label">分类</span>
+		</a>
+		<a class="mui-tab-item" href="cart.html">
+			<!-- fontawesome引用 fa fa-shopping-cart-->
+			<span class="mui-icon fa fa-shopping-cart"></span>
+			<span class="mui-tab-label">购物车</span>
+		</a>
+		<a class="mui-tab-item" href="user.html">
+			<span class="mui-icon mui-icon-person"></span>
+			<span class="mui-tab-label">会员中心</span>
+		</a>
+	</nav>
+	<div class="mui-content">
+		<div class="container">
+			<!-- 搜索框 -->
+			<div class="search">
+				<input type="text" placeholder="搜索您喜欢的商品">
+				<input type="button" value="搜索" id="search-btn">
+			</div>
+			<!-- /搜索框 -->
+			<div class="history-top mui-clearfix">
+				<!-- 搜索历史 -->
+				<span class="title mui-pull-left">搜索历史</span>
+				<!-- 清空历史 -->
+				<span class="clear mui-pull-right mui-icon mui-icon-trash" id="clear-btn">清空历史</span>
+				<!-- 搜索列表 -->
+			</div>
+			<ul class="mui-table-view" id="history-box">
+    		
+			</ul>
+		</div>
+	</div>
+	<script src="assets/mui/js/mui.min.js"></script>
+	<script src="assets/zepto/zepto.min.js"></script>
+	<script src="assets/art-template/template-web.js"></script>
+	<script src="js/search.js"></script>
+	<script src="js/public.js"></script>
+
+	<script id="historyTpl" type="text/html">
+		<% for(var i=0;i<result.length;i++){ %>
+		<li class="mui-table-view-cell"><%=result[i]%></li>
+		<% } %>
+	</script>
+</body>
+</html>
